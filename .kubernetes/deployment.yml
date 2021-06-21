@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: funathon-viz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: funathon-viz
+  template:
+    metadata:
+      labels:
+        app: funathon-viz
+    spec:
+      containers:
+        - name: funathon-viz
+          image: funathonduvel/funathon-viz:latest
+          env:
+            - name: TEST
+              value: "true"
