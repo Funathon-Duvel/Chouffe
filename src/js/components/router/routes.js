@@ -1,20 +1,26 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
 import { Route } from 'react-router-dom';
-import { items } from './component-list';
 import Page from 'js/components/router/pages/page';
+import { itemsState } from 'js/store/items';
 
-export default () => (
-	<div>
-		{items.map(
-			({ route, title, body, type }) =>
-				type === 'SubHeader' ? null : (
-					<Route
-						key={route}
-						exact
-						path={route}
-						component={() => <Page title={title} body={body} route={route} />}
-					/>
-				)
-		)}
-	</div>
-);
+const Routes = () => {
+	const [items] = useRecoilState(itemsState);
+
+	return (
+		<div>
+			{items.map(({ route, title, body, query }) => (
+				<Route
+					key={route}
+					exact
+					path={route}
+					component={() => (
+						<Page title={title} body={body} route={route} query={query} />
+					)}
+				/>
+			))}
+		</div>
+	);
+};
+
+export default Routes;
