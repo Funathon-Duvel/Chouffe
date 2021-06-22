@@ -1,6 +1,11 @@
 # Chouffe
 
-`Chouffe` means `Regarder` in French
+[![Chouffe CI](https://github.com/Funathon-Duvel/Chouffe/actions/workflows/ci.yml/badge.svg)](https://github.com/Funathon-Duvel/Chouffe/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+[https://chouffe.dev.insee.io](https://chouffe.dev.insee.io)
+
+`Chouffe` means `Voir` in Arabic
 
 ## Description
 
