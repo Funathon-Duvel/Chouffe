@@ -5,7 +5,7 @@ import PageBody from './page-body';
 
 function Page({ title, query, body }) {
 	return (
-		<div className="mui-container">
+		<div>
 			<PageTitle title={title} />
 			<PageBody body={body} query={query} />
 		</div>

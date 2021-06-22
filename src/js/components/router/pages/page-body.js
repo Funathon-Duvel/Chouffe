@@ -6,7 +6,7 @@ function PageBody({ body, query }) {
 	if (query)
 		return (
 			<div className="mui-row slide-text">
-				<Rdf query={query} />
+				<Rdf queryURL={query} />
 			</div>
 		);
 	return <div className="mui-row slide-text">{body}</div>;

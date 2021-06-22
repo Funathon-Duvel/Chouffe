@@ -9,7 +9,15 @@ import { TOKEN } from 'config';
 export default class App extends Component {
 	constructor(props) {
 		super();
-		const { data, colors, viewport, pointCoords, zoom } = props;
+		const {
+			data,
+			colors,
+			viewport,
+			pointCoords,
+			zoom,
+			latitude,
+			longitude,
+		} = props;
 		const classes = buildClasses(data, colors);
 		this.state = {
 			classes,
@@ -19,11 +27,11 @@ export default class App extends Component {
 				{
 					latitude:
 						pointCoords && pointCoords.length === 1
-							? Number.parseFloat(pointCoords[0].latitude)
+							? Number.parseFloat(latitude)
 							: 47,
 					longitude:
 						pointCoords && pointCoords.length === 1
-							? Number.parseFloat(pointCoords[0].longitude)
+							? Number.parseFloat(longitude)
 							: 6.14,
 					zoom: zoom ? Number.parseFloat(zoom, 10) : 4.5,
 					bearing: 0,
@@ -90,23 +98,21 @@ export default class App extends Component {
 				onHover={this._onHover}
 				mapboxApiAccessToken={TOKEN}
 			>
-				{pointCoords &&
-					pointCoords.length > 0 && (
-						<Points
-							pointCoords={pointCoords}
-							pointContentArray={pointContentArray}
-						/>
-					)}
+				{pointCoords && pointCoords.length > 0 && (
+					<Points
+						pointCoords={pointCoords}
+						pointContentArray={pointContentArray}
+					/>
+				)}
 				{legend && <Legend legend={legend} classes={classes} />}
-				{contentArray.length !== 0 &&
-					hoveredFeature && (
-						<Tooltip
-							hoveredFeature={hoveredFeature}
-							x={x}
-							y={y}
-							contentArray={contentArray}
-						/>
-					)}
+				{contentArray.length !== 0 && hoveredFeature && (
+					<Tooltip
+						hoveredFeature={hoveredFeature}
+						x={x}
+						y={y}
+						contentArray={contentArray}
+					/>
+				)}
 			</MapGL>
 		);
 	}

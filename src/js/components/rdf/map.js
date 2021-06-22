@@ -9,10 +9,6 @@ export default ({ data, latitude, longitude, zoom }) => {
 		contours: polygon,
 	}));
 
-	const legend = {
-		title: 'Population',
-	};
-
 	const colors = [
 		'#F2A4C4',
 		'#EF91B6',
@@ -38,11 +34,12 @@ export default ({ data, latitude, longitude, zoom }) => {
 	return (
 		<ColoredMap
 			data={geoJsonData}
-			legend={legend}
 			colors={colors}
 			pointCoords={pointCoords}
 			zoom={zoom}
 			contentArray={contentArray}
+			latitude={latitude}
+			longitude={longitude}
 		/>
 	);
 };
