@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: funathon-viz
+  name: chouffe
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: funathon-viz
+      app: chouffe
   template:
     metadata:
       labels:
-        app: funathon-viz
+        app: chouffe
     spec:
       containers:
-        - name: funathon-viz
-          image: funathonduvel/funathon-viz:latest
+        - name: chouffe
+          image: funathonduvel/chouffe:latest
           env:
             - name: TEST
-              value: "true"
+              value: 'true'

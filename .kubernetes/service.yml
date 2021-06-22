@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: funathon-viz
+  name: chouffe
 spec:
   ports:
     - name: http
       targetPort: 80
       port: 80
   selector:
-    app: funathon-viz
+    app: chouffe

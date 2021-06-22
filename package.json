@@ -1,8 +1,8 @@
 {
-	"name": "funathon-viz",
+	"name": "chouffe",
 	"version": "0.0.1",
 	"description": "React demo Web application to consume and display SPARQL data",
-	"author": "LOS ESSnet",
+	"author": "Duvel",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
